@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VueJS Course</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div id="app" v-cloak><p>Hello {{fullName}}</p>
+    <p><a :href="url" target="_blank">Google</a></p>
+    <p v-html="raw_url"></p>
+
+    <hr/>
+
+    <label>First Name:</label>
+    <input type="text" v-model.lazy.trim="firstName" />
+
+    <label>Middle Name:</label>
+    <input type="text" @keyup.enter="updateMiddleName" />
+
+    <label>Last Name:</label>
+    <input type="text" :value="lastName" @input.prevent="updateLastName('Last name event triggered!',$event)"/>
+
+    <label> Age </label>
+    <input type="number" v-model.number="age" />
+
+    typeOfAge: {{typeof age}}
+
+    <button type="button" @click="increment">Increment</button>
+    <button type="button" @click="age--">Decrement</button>
+
+  </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
