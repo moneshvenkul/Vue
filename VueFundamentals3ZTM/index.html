@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <title>VueJS Course</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <div id="app" v-cloak>
+
+    <p v-if = "model==1"> Showing v-if directive content </p>
+    <template v-else-if = "model==2">
+    <p v-show="model==1">Bonus Content</p> 
+    <h1> Showing v-else-if directive content </h1>
+  </template>
+    <p v-else> Showing v-else directive content </p>
+
+    <select v-model="model">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
